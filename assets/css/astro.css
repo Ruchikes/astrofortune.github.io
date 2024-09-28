@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Metrophobic');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Common Colors */
+
+:root{
+    --black: #000000;
+    --orange: #ff8000;
+    --lightorange: #eca054;
+    --blue: #1566A5;
+    --lightblue: #29C5f6;
+    --card-border: rgb(228, 226, 226);
+    --outline: rgb(201, 200, 200);
+}
+/* #0f3450 */
+html, body {
+    overflow-x: clip;
+}
+
+
+body{
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 1rem;
+}
+
+/* Common Elements */
+.heading2{
+    font-weight: 800;
+}
+
+.hr-img{
+    width: 25%;
+}
+
+@media (max-width: 600px){
+    .hr-img{
+        width:50%;
+    }
+}
+/* Header Section */
+.header-logo{
+    color: var(--orange);
+    font-weight: 600;
+}
+
+.tagline{
+    display: block;
+    font-size: 1rem;
+    color: var(--orange);
+}
+
+
+.nav-link{
+    color: white;
+    position: relative;
+    font-size: 0.9rem;
+    transition: all 0.4s ease-in-out 0.1s;
+    padding: 1.2rem 0rem;
+}
+
+@media (max-width:700px){
+    .nav-link{
+        padding: 0.5rem 0rem;
+    }
+}
+
+.nav-link:hover::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    animation: border_anim 0.3s linear forwards;
+    border-top: 3px solid var(--orange);
+    margin-left: 9px;
+}
+
+@keyframes border_anim{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 70%;
+    }
+
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+/* Header Image Section */
+.header-bg{
+    background-image: url("../images/header-background.jpeg");
+    background-size: cover;
+    background-position: fixed;
+    background-repeat: no-repeat;
+}
+
+.header-btn{
+    background-color: white;
+    color: black;
+    display: inline-block;
+    text-transform: capitalize;
+    border-radius: 40px;
+    font-weight: 600;
+
+    background: linear-gradient(to left, var(--orange) 50%, white 50%);
+    background-size: 300% 100%;
+    background-position: left bottom;
+    transition: all 0.5s ease-out;
+}
+
+.header-btn:hover{
+    color: white;
+    background-position: right bottom;
+}
+
+.header-img-bg{
+    background-image: url("../images/header-hand.png");
+    background-size: cover;
+    background-position: center center;
+    background-size: 20rem;
+    background-repeat: no-repeat;
+}
+
+.header-img{
+    animation: rotation 8s linear infinite;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+.drop-menu{
+    background-color: var(--black);
+}
+.drop-item{
+    color: white;
+    transition: all 0.2s linear;
+    border-radius: 0px;
+}
+
+.drop-item:hover{
+    color: white;
+    background-color: var(--black);
+    border-bottom: 1px solid var(--orange);
+}
+/* About Section */
+.about-img{
+    border-radius: 20px;
+}
+
+.about-icon{
+    border: 1px solid var(--outline);
+    border-radius: 50px;
+    padding: 1.5rem;
+}
+
+.about-btn{
+    background-color: white;
+    color: white;
+    display: inline-block;
+    text-transform: capitalize;
+    border-radius: 40px;
+    font-weight: 500;
+    padding: 0.6rem 2rem;
+    background: linear-gradient(to left, var(--orange) 45%, transparent 5%,  var(--orange) 50%);
+    background-size: 300% 100%;
+    background-position: left bottom;
+    transition: all 0.6s ease-out;
+}
+
+.about-btn:hover{
+    color: white;
+    background-position: right bottom;
+}
+
+/* Horoscope Forecast Section */
+.horoscope-card{
+    border-radius: 8px;
+    transition: all 0.2s linear;
+}
+
+.horoscope-title{
+    font-weight:600;
+    transition: all 0.2s linear;
+    color: black;
+}
+
+.horoscope-text{
+    color: grey;
+    transition: all 0.2s linear;
+}
+
+.horoscope-card:hover{
+    background: linear-gradient(to left, var(--orange), var(--lightorange));
+    color: white;
+    border: none;
+}
+
+.horoscope-card:hover .horoscope-img{
+    background-color: white;
+    border-radius: 50px;
+}
+
+.horoscope-card:hover .horoscope-title{
+    color: white;
+}
+
+.horoscope-card:hover .horoscope-text{
+    color: white;
+}
+
+/* Service Section */
+.service-img-bg{
+    position: relative;
+}
+
+.service-img1{
+    position: absolute;
+    animation: rotation 10s linear infinite;
+    z-index: -1;
+    text-align: center;
+    width: 34rem;
+}
+
+.service-img2{
+    z-index: 1;
+    border-radius: 140px;
+    height: 32rem;
+    margin: 0rem 10rem;
+}
+
+@media (max-width:690px){
+    .service-img1{
+        width: 30rem;
+    }
+    .service-img2{
+        height: 28rem;
+        margin: 0rem 9rem;
+    }    
+}
+
+@media (max-width:596px){
+    .service-img1{
+        width: 28rem;
+    }
+    .service-img2{
+        height: 26rem;
+        margin: 0rem 8rem;
+    }    
+}
+
+@media (max-width:528px){
+    .service-img1{
+        width: 24rem;
+    }
+    .service-img2{
+        height: 22rem;
+    }    
+}
+
+@media (max-width:465px){
+    .service-img1{
+        width: 20rem;
+    }
+    .service-img2{
+        height: 18rem;
+        margin: 0rem 6rem;
+    }    
+}
+
+
+.service-icon{
+    width: 6rem;
+}
+.service-title{
+    color: var(--black);
+    font-weight: 600;
+}
+
+.service-text{
+    color: grey;
+    font-size: 0.9rem;
+}
+
+.service-link{
+    color: var(--black);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.service-card:hover{
+    transition: all 0.2s linear;
+    background: linear-gradient(to left, var(--orange), var(--lightorange));
+}
+
+.service-card-bg{
+    display: none;
+}
+
+.service-card:hover .service-card-bg{
+    background-position: center center;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    animation: rotation 10s linear infinite;
+    opacity: 0.6;
+    filter:brightness(0) invert(1);
+}
+
+.service-card:hover .service-icon{
+    filter:brightness(0) invert(1);
+    -webkit-filter:brightness(0) invert(1);
+}
+
+.service-card:hover .service-title{
+    color: white;
+    transition: all 0.2s linear;
+}
+
+.service-card:hover .service-text{
+    color: white;
+    transition: all 0.2s linear;
+}
+
+.service-card:hover .service-link{
+    color: white;
+    transition: all 0.2s linear;
+}
+
+/* Why choose us section */
+.counter-bg{
+    background-image: url("https://i.ytimg.com/vi/bg1pMExUK7Y/maxresdefault.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.fact-bg-img{
+    background-image: url("../images/fact-img.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.fact-counter{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.fact-counter:after {
+    content: "+";
+    font-size: 1.6rem;
+    margin: 0rem 0.2rem;
+}
+
+.fact-text{
+    font-size: 1.1rem;
+    transition: all 0.2s linear;
+}
+
+.fact-area:hover .fact-text{
+    color: var(--lightorange);
+}
+
+/* Testimonials Section */
+
+.client-img{
+    border-radius: 50%;
+}
+
+.client-bg{
+    background: linear-gradient(to right, var(--orange), var(--lightorange));
+    border-radius: 30px;
+}
+
+.client-card-bg{
+    background-position: center center;
+    background-size: contain;
+    width: 14rem;
+    right: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    animation: rotation 10s linear infinite;
+    opacity: 0.8;
+    filter:brightness(0) invert(1);
+}
+
+.client-name{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Article Section */
+
+.article-title{
+    color: var(--black);
+    transition: all 0.2s linear;
+}
+
+.article-card:hover .article-title{
+    color: var(--orange);
+}
+
+.article-btn{
+    background-color: white;
+    color: white;
+    display: inline-block;
+    text-transform: capitalize;
+    border-radius: 40px;
+    margin-left: 11rem;
+    margin-top: -1rem;
+    font-weight: 500;
+    padding: 0.6rem 2rem;
+    background: linear-gradient(to left, var(--orange) 49%, white 1%,  var(--orange) 50%);
+    background-size: 300% 100%;
+    background-position: left bottom;
+    transition: all 0.6s ease-out;
+}
+
+.article-btn:hover{
+    color: white;
+    background-position: right bottom;
+}
+
+/* Footer Section */
+.footer-bg{
+    background-image: url("../images/footer-img.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.footer-text{
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s linear;
+}
+
+.footer-text:hover{
+    color: var(--orange);
+    cursor: pointer;
+}
+
+/* Scroll to top */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    border: none;
+    background-color: transparent;
+    z-index: 99; /* Make sure it does not overlap */
+    color: var(--lightorange); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    font-size: 3rem; /* Increase font size */
+    transition: all 0.2s linear;
+  }
+  
+  .scroll-btn{
+    border-radius: 50px;
+    transition: all 0.2s linear;
+    border: 2px solid var(--lightorange);
+  }
+  
+  #myBtn:hover .scroll-btn{
+    color: var(--orange);
+    border: 2px solid var(--orange);
+}
+
+/* About Page */
+.about-bg{
+    background-image: url("../images/page-header-img.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Service Page */
+.gallery-bg{
+    background-image: url("https://kamleshyadav.com/html/astrology/version-3/assets/images/hand_bg.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* animation: rotation 10s linear infinite;
+    position: relative; */
+}
+
+.gallery-img{
+    box-shadow: 4px 4px 2px var(--lightorange);
+    transition: all 0.2s linear;
+}
+
+.gallery-img:hover{
+    filter: brightness(80%);
+}
+/* Contact Page */
+
+.contact-icon{
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    padding: 0.9rem;
+    margin-bottom: -1rem;
+}
+
+/* Blog Page */
+.blog-category{
+    color: grey;
+    /* font-size: 0.9rem; */
+    transition: all 0.2s linear;
+}
+
+.blog-category:hover{
+    color: var(--orange);
+}
+
+.accordion-item:hover{
+    border: 1px solid var(--orange);
+}
+
+.accordion-button:not(.collapsed){
+    background-color: var(--orange);
+    color: white;
+}
+
+.social-icon{
+    border: 1px solid var(--outline);
+    border-radius: 50px;
+    color: grey;
+    transition: all 0.2s linear;
+}
+
+.social-icon:hover{
+    border: 1px solid var(--orange);
+    border-radius: 50px;
+    color: var(--orange);
+}
+
+.blog-img{
+    border-radius: 12px;
+    height: 24rem;
+}
+
+@media (max-width:530px){
+    .blog-img{
+        height: 16rem;
+    }
+
+}
+.blog-card-title{
+    color: var(--black);
+    transition: all 0.2s linear;
+}
+.blog-card:hover .blog-card-title{
+    color: var(--orange);
+}
+
+.blog-btn{
+    margin-right: 2rem;
+    margin-top: -2rem;
+}
